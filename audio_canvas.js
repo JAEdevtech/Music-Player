@@ -14,7 +14,7 @@ const analyser = audioCtx.createAnalyser();
 const srcNode = audioCtx.createMediaElementSource(audioElement);
 
 section.prepend(audioElement);
-audioElement.appendChild(source)
+audioElement.type = "audio/ogg"
 audioElement.controls = true;
 audioElement.autoplay = true;
 
@@ -88,7 +88,7 @@ tracks.addEventListener("change", () => {
 });
 
 function selectedAudioElementHandler(selected_li) {
-  source.src = selected_li.target.dataset.dataHref;
+  audioElement.src = selected_li.target.dataset.dataHref;
   nowPlaying.textContent = selected_li.target.dataset.title;
 
   audioElement.addEventListener("play", () => {
@@ -110,7 +110,7 @@ function selectedAudioElementHandler(selected_li) {
 }
 
 function control(action) {
-  source.src = action.dataset.dataHref;
+  audioElement.src = action.dataset.dataHref;
   nowPlaying.innerHTML = action.dataset.title;
   audioElement.dataset.index = action.dataset.index;
 }
@@ -138,4 +138,5 @@ function next_prevHandler(ev) {
 next.addEventListener("click", (ev) => next_prevHandler(ev));
 
 prev.addEventListener("click", (ev) => next_prevHandler(ev));
+
 
