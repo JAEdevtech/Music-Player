@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Music player</title>
+  </head>
+  <body>
+    <canvas
+      style="background-color: black"
+      id="audioVisualiser"
+      width="600"
+      height="300"
+    >
+    </canvas>
+    <section id="playbackQueue" class="queueContainer">
+      <button>
+        <svg
+          id="previous"
+          width="60px"
+          height="30px"
+          viewBox="0 0 24.00 24.00"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          transform="matrix(-1, 0, 0, 1, 0, 0)rotate(0)"
+        >
+          <g id="previ" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              id="p"
+              d="M19 6V18M5 18V6L15 12L8.33333 16"
+              stroke="#000000"
+              stroke-width="1.224"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </g>
+        </svg>
+      </button>
+      <button>
+        <svg
+          id="nextt"
+          width="60px"
+          height="30px"
+          viewBox="0 0 24.00 24.00"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"
+        >
+          <g id="nxt" stroke-width="0"></g>
+          <g
+            id="SVGRepotracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepoiconCarrier">
+            <path
+              id="n"
+              d="M19 6V18M5 18V6L15 12L8.33333 16"
+              stroke="#000000"
+              stroke-width="1.224"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </g>
+        </svg>
+      </button>
+      <input
+        placeholder="add audio"
+        id="tracks"
+        accept=".opus,.mp3,.flac,.wav"
+        class="audioFiles"
+        type="file"
+        name="audio"
+        multiple
+      />
+      <pre id="audioList"></pre>
+      <ul id="queue"></ul>
+    </section>
+    <script type="module" src="audio_canvas.js"></script>
+  </body>
+</html>
